@@ -1,0 +1,5 @@
+div.table { display: table; }
+div.tr { display: table-row; }
+div.td, div.th { display: table-cell; vertical-align: top; }
+textarea {min-height: 200px; min-width: 400px; }
+#list li {cursor:pointer; }
