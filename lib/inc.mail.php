@@ -18,13 +18,13 @@ function build_address_string($addrs) {
 
 function multi_attach_mail($from, $to, $cc, $bcc, $subject, $message, $files){
     // parse fields
-    $to = Mail_RFC822::parseAddressList($to);
+    $to = empty($to) ? Array() : Mail_RFC822::parseAddressList($to);
     if (PEAR::isError($to)) return $to;
-    $cc = Mail_RFC822::parseAddressList($cc);
+    $cc = empty($cc) ? Array() : Mail_RFC822::parseAddressList($cc);
     if (PEAR::isError($cc)) return $cc;
-    $bcc = Mail_RFC822::parseAddressList($bcc);
+    $bcc = empty($bcc) ? Array() : Mail_RFC822::parseAddressList($bcc);
     if (PEAR::isError($bcc)) return $to;
-    $from = Mail_RFC822::parseAddressList($from);
+    $from = empty($from) ? Array() : Mail_RFC822::parseAddressList($from);
     if (PEAR::isError($from)) return $from;
 
     $cc = array_merge($cc, $from);
