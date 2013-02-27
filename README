@@ -6,6 +6,11 @@ Aufgabe
 
 Die Anwendung stellt ein eMail-Formular bereit und erlaubt als Absender die per SimpleSAML vorgegebenen Mailinglisten.
 
+Abhängigkeit
+-------------
+
+PEAR Mail.
+
 Lizenz / COPYING
 -----------------
 
