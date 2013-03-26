@@ -8,7 +8,7 @@ include SGISBASE."/template/header.tpl";
 
 Die eMail wurde erfolgreich versandt.
 
-<a href="<?=htmlentities($logoutUrl)?>">Abmelden</a>
+<a href="<?php echo htmlentities($logoutUrl)?>">Abmelden</a>
 
 <?php
 

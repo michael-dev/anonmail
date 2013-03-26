@@ -8,10 +8,10 @@ include SGISBASE."/template/header.tpl";
 
 Die eMail wurde nicht versandt:
 <pre>
-<? echo htmlspecialchars($errMsg); ?>
+<?php echo htmlspecialchars($errMsg); ?>
 </pre>
 
-<a href="<?=htmlentities($logoutUrl)?>">Abmelden</a>
+<a href="<?php echo htmlentities($logoutUrl)?>">Abmelden</a>
 
 <?php
 

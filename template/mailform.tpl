@@ -11,7 +11,7 @@ require "../template/header.tpl";
 <div class="table">
  <div class="tr">
   <div class="th">Absender:</div>
-  <div class="td"><select id="from" name="from"><?foreach ($mailinglists as $ml):?><option><? echo htmlentities($ml);?></option><? endforeach; ?></select></div>
+  <div class="td"><select id="from" name="from"><?foreach ($mailinglists as $ml):?><option><?php echo htmlentities($ml);?></option><?php endforeach; ?></select></div>
  </div>
  <div class="tr">
   <div class="th">An:</div>
