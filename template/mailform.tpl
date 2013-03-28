@@ -7,11 +7,12 @@ require "../template/header.tpl";
 ?>
 <h2>Anonymer Mailversand</h2>
 
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="sendmail.php" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="nonce" value="<?php echo $nonce; ?>">
 <div class="table">
  <div class="tr">
   <div class="th">Absender:</div>
-  <div class="td"><select id="from" name="from"><?foreach ($mailinglists as $ml):?><option><?php echo htmlentities($ml);?></option><?php endforeach; ?></select></div>
+  <div class="td"><select id="from" name="from"><?php foreach ($mailinglists as $ml):?><option><?php echo htmlentities($ml);?></option><?php endforeach; ?></select></div>
  </div>
  <div class="tr">
   <div class="th">An:</div>
@@ -79,6 +80,7 @@ function doSubmit() {
   data.append( 'bcc' , $('#bcc').val() );
   data.append( 'subject' , $('#subject').val() );
   data.append( 'message' , $('#message').val() );
+  data.append( 'nonce' , $('#nonce').val() );
   data.append( 'ajax' , 1 );
   for (var i = 0, f; f = attachments[i]; i++) {
     data.append( 'attachment[]' , f );

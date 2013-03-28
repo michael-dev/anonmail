@@ -5,6 +5,17 @@ global $attributes, $logoutUrl, $AUTHGROUP, $ADMINGROUP, $nonce, $loginUrl;
 require_once "../lib/inc.all.php";
 $ret = Array();
 
+if ($_REQUEST["nonce"] !== $nonce) {
+  if (isset($_REQUEST["ajax"])) {
+    $ret["msg"] = "CSRF Schutz - Seite neu laden.";
+    header("Content-Type: text/json; charset=UTF-8");
+    echo json_encode($ret);
+  } else {
+    echo "CSRF Schutz";
+  }
+  die();
+}
+
 if (!isLoggedIn()) {
   if (isset($_REQUEST["ajax"])) {
     $ret["msg"] = "Login nötig.";
