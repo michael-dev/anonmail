@@ -8,7 +8,7 @@ require "../template/header.tpl";
 <h2>Anonymer Mailversand</h2>
 
 <form action="sendmail.php" method="POST" enctype="multipart/form-data">
-<input type="hidden" name="nonce" value="<?php echo $nonce; ?>">
+<input type="hidden" name="nonce" id="nonce" value="<?php echo $nonce; ?>">
 <div class="table">
  <div class="tr">
   <div class="th">Absender:</div>
