@@ -60,7 +60,7 @@ if (isset($_FILES["attachment"])) {
   $files = Array();
 }
 
-$r = multi_attach_mail($from, $to, $cc, $bcc, $subject, $message, $files);
+$r = multi_attach_mail(["from" => $from, "to" => $to, "cc" => $cc, "bcc" => $bcc, "subject" => $subject, "message" => $message, "files" => $files]);
 
 if ($r === true) {
   if (isset($_REQUEST["ajax"])) {
